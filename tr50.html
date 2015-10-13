@@ -40,29 +40,29 @@
          </tbody>
       </table>
       <div class="body">
-         <h2 style="text-align:center"><span></span> Unicode Technical Report #50
+         <h2 style="text-align:center"><span class="changed">Proposed Update </span> Unicode Technical Report #50
          </h2>
          <h1 style="text-align:center">Unicode Vertical Text Layout</h1>
          <table class="wide" border="1" cellpadding="2" width="90%">
             <tbody>
                <tr>
                   <td valign="top">Editor</td>
-                  <td valign="top">Koji Ishii 石井宏治 (<a href="mailto:kojiishi@gluesoft.co.jp">kojiishi@gluesoft.co.jp</a>)
+                  <td valign="top">Koji Ishii 石井宏治<span class="changed"> (<a href="mailto:kojiishi@gmail.com">kojiishi@gmail.com</a>)
+                  </span>
                   </td>
                </tr>
                <tr>
                   <td valign="top">Date</td>
-                  <td valign="top"><span>2014-09-22</span></td>
+                  <td valign="top" class="changed"><span>2015-10-12</span></td>
                </tr>
                <tr>
                   <td valign="top">This Version</td>
-                  <td valign="top"><span><a href="http://www.unicode.org/reports/tr50/tr50-13.html">http://www.unicode.org/reports/tr50/tr50-13.html</a></span></td>
+                  <td valign="top" class="changed"><span>
+				  <a href="http://www.unicode.org/reports/tr50/tr50-14.html">http://www.unicode.org/reports/tr50/tr50-14.html</a></span></td>
                </tr>
                <tr>
                   <td valign="top">Previous Version</td>
-                  <td valign="top"><span>
-				  <a href="http://www.unicode.org/reports/tr50/tr50-11.html">
-				  http://www.unicode.org/reports/tr50/tr50-11.html</a></span></td>
+                  <td valign="top" class="changed"><span><a href="http://www.unicode.org/reports/tr50/tr50-13.html">http://www.unicode.org/reports/tr50/tr50-13.html</a></span></td>
                </tr>
                <tr>
                   <td valign="top">Latest Version</td>
@@ -74,17 +74,19 @@
                </tr>
                <tr>
                   <td valign="top">Data</td>
-                  <td valign="top"><span><a href="http://www.unicode.org/Public/vertical/revision-13/">http://www.unicode.org/Public/vertical/revision-13/</a></span></td>
+                  <td valign="top" class="changed"><span>
+				  <a href="http://www.unicode.org/Public/vertical/revision-14/">
+				  http://www.unicode.org/Public/vertical/revision-14/</a></span></td>
                </tr>
                <tr>
                   <td valign="top">Revision</td>
-                  <td valign="top"><a href="#Modifications"><span>13</span></a></td>
+                  <td valign="top" class="changed"><a href="#Modifications"><span>14</span></a></td>
                </tr>
             </tbody>
          </table>
          <h4 style="margin-top: 1em;">Summary</h4>
-         
-         
+
+
          <p><i>The Unicode code charts generally show characters
                oriented for horizontal presentation.
                However,
@@ -92,8 +94,8 @@
                A few characters change shape or orientation when the text is rotated from horizontal
                to vertical.
                </i></p>
-         
-         
+
+
          <p><i>When text is presented, there are various
                conventions for the orientation of the characters with respect to
                the line.
@@ -108,14 +110,30 @@
                a Unicode character property which can
                serve as a stable default orientation of characters for reliable document interchange.
                </i></p>
-         
-         
+
+
          <h4><i>Status</i></h4>
-         <p><i>This document has been reviewed by Unicode members and
-               other interested parties, and has been approved for publication
-               by the Unicode Consortium. This is a stable document and may be
-               used as reference material or cited as a normative reference by
-               other specifications.</i></p>
+
+		<!-- NOT YET APPROVED -->
+		<p class="changed">
+			<i>This is a<b><font color="#ff3333"> draft </font></b>document
+				which may be updated, replaced, or superseded by other documents at
+				any time. Publication does not imply endorsement by the Unicode
+				Consortium. This is not a stable document; it is inappropriate to
+				cite this document as other than a work in progress.
+			</i>
+		</p>
+		<!-- END NOT YET APPROVED -->
+		<!-- APPROVED
+      <p><i>This document has been reviewed by Unicode members and other
+	  interested parties, and has been approved for publication by the Unicode
+	  Consortium. This is a stable document and may be used as reference
+	  material or cited as a normative reference by other specifications.</i></p>
+       END APPROVED -->
+
+
+
+
          <blockquote>
             <p><i><b>A Unicode Technical Report (UTR)</b> contains
                   	informative material. Conformance to the Unicode Standard does
@@ -153,10 +171,10 @@
             <li><a href="#Modifications">Modifications</a></li>
          </ul>
          <hr />
-         
+
          <h2><a name="overview">1 Overview and Scope</a></h2>
-         
-         
+
+
          <p>When text is displayed in vertical lines, there are various
             conventions for the orientation of the characters with respect to
             the line.
@@ -166,37 +184,37 @@
             but words and sentences that are composed of characters of
             the Latin script are typically oriented sideways,
             as can be seen in figure 1.
-            
+
          </p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="figure_1">Figure 1. Japanese vertical text</a></b></p>
-            
-            
+
+
             <p><img src="japanese.png" alt="" /></p>
-            
+
          </center>
-         
-         
+
+
          <p>
             In many parts of the world, most characters are upright,
             as can be seen in figure 2.
-            
+
          </p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="figure_2">Figure 2. Western vertical text</a></b></p>
-            
-            
+
+
             <p><img src="paystation.png" alt="" /></p>
-            
+
          </center>
-         
-         
+
+
          <p>
             Most languages and scripts are written horizontally and vertical
             presentation is a special case, usually used for short runs of text (as in  figure
@@ -207,10 +225,10 @@
             the orientation in which characters are laid out can vary,
             depending on the scripts, the style, and sometimes the context.
             The preferred or desired orientation may also change over time.
-            
+
          </p>
-         
-         
+
+
          <p>
             While the choice of orientation for a character can vary across documents,
             it is important that the choice made by an author for a specific document be clearly
@@ -221,55 +239,55 @@
             in the document.
             Finally, the expression of the author’s choice should be relatively concise,
             to facilitate document authoring and minimize document size.
-            
+
          </p>
-         
-         
+
+
          <p>
             This report describes a Unicode character property
             which can serve as a stable default character orientation
             for the purpose of reliable document interchange.
-            
+
          </p>
-         
-         
+
+
          <p>
             For the purpose of reliable document interchange,
             this property defines an unambiguous default value,
             so that implementations could reliably render a character stream
             based solely on the property values, without depending on other information
             such as  provided in the tables of the selected font.
-            
+
          </p>
-         
-         
+
+
          <p>
             The intent is that document formats should offer to the author the possibility of
             specifying the desired orientation of a given character
             (either all occurrences or a particular occurrence),
             and that in the absence of an explicit specification,
             the orientation is implicitly that defined by the property presented in this report.
-            
+
          </p>
-         
-         
+
+
          <p>
             In plain text, which by definition does not allow the recording of any data beyond
             the characters,
             the orientations are by necessity those specified by the property.
-            
+
          </p>
-         
-         
+
+
          <p>
             The actual choice for the property values should result in a reasonable or legible
             default,
             but it may not be publishing-material quality,
             and it may not be a good choice if used in a specific style or context.
-            
+
          </p>
-         
-         
+
+
          <p>
             The property values are chosen first
             to match existing practice in Japanese context in Japan
@@ -279,10 +297,10 @@
             Commonly used characters of Latin and other scripts
             that appear in Japanese and other East Asian environments are also taken into account,
             but with the lower priority.
-            
+
          </p>
-         
-         
+
+
          <p>
             The scope of the property is limited by the scope of Unicode.
             For example, Unicode does not directly support
@@ -296,14 +314,14 @@
             markup ultimately controls the orientation.
             See [<a href="#biblio_unicode">Unicode</a>], Section 11.4
             for a more complete discussion of the scope of Egyptian Hieroglyph characters.
-            
+
          </p>
-         
-         
-         
+
+
+
          <h2><a name="conformance">2 Conformance</a></h2>
-         
-         
+
+
          <p>The property defined in this report is
             informative. The intent of this report is to provide,
             in the absence of other information,
@@ -315,68 +333,68 @@
             This default determination is defined in the accompanying data file,
             but in no way implies that the character is used only in that orientation.
          </p>
-         
-         
+
+
          <p>For more information on the conformance implications, see
             [<a href="#biblio_unicode">Unicode</a>], Section 3.5, Properties, in
             particular the definition (D35) of an informative property.
          </p>
-         
-         
+
+
          <p>
             Note that the property is not part of the Unicode Character Database [<a href="#biblio_ucd">UCD</a>].
-            
+
          </p>
-         
-         
-         <h2><a name="vo">3 
+
+
+         <h2><a name="vo">3
                The Vertical_Orientation Property (<tt>vo</tt>)
                </a></h2>
-         
-         
-         
+
+
+
          <h3><a name="vo_values">3.1 Property values</a></h3>
-         
-         
+
+
          <p>
             The possible property values are given in table 1.
          </p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="table_1">Table 1. Property Values</a></b></p>
-            
+
             <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-               
+
                <tbody>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">U</td>
-                     
+
                      <td valign="top" style="border-width: 0px;">Characters which are displayed upright, with the same orientation
                         that appears
                         in the code charts.
                      </td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">R</td>
-                     
+
                      <td valign="top" style="border-width: 0px;">Characters which are displayed sideways, rotated
                         90 degrees clockwise compared to the code
                         charts.
                      </td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">Tu</td>
-                     
+
                      <td valign="top" style="border-width: 0px;">
                         Characters which are not just upright or sideways, but
                         generally
@@ -385,78 +403,78 @@
                         In addition, as a fallback,
                         the character can be displayed with the code chart glyph
                         upright.
-                        
+
                      </td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">Tr</td>
-                     
+
                      <td valign="top" style="border-width: 0px;">
                         Same as Tu except that,
                         as a fallback,
                         the character can be displayed with the code chart glyph
                         rotated 90 degrees clockwise.
-                        
+
                      </td>
-                     
+
                   </tr>
-                  
+
                </tbody>
-               
+
             </table>
-            
+
          </center>
-         
-         
+
+
          <p>Note that the orientation is described with respect to the
             appearance in the code charts.
          </p>
-         
-         
-         
-         
-         
+
+
+
+
+
          <h3><a name="grapheme_clusters">3.2 Grapheme Clusters</a></h3>
-         
-         
+
+
          <p>As in all matters of typography, the interesting unit of
             text is not the character, but a grapheme cluster: it does not
             make sense to use a base character upright and a combining mark
             attached to it sideways.
             Implementations should apply the orientation to each grapheme cluster.
-            
+
          </p>
-         
-         
+
+
          <p>A possible choice for the notion of grapheme cluster is
             either that of legacy grapheme cluster or that of extended
             grapheme cluster, as defined in [<a href="#biblio_uax29">UAX29</a>].
          </p>
-         
-         
+
+
          <p>The orientation for a grapheme cluster as a whole is then
             determined by taking the orientation of the first character in the
             cluster, with the following exception:
          </p>
-         
-         
+
+
          <blockquote>
             <p>If the cluster contains an enclosing combining mark
                (general category Me), then the whole cluster has
                the Vertical_Orientation value U.
             </p>
          </blockquote>
-         
-         
-         
-         
-         
+
+
+
+
+
          <h3><a name="code_charts">3.3 Vertical Glyphs in the Code Charts</a></h3>
-         
-         
+
+
          <p>
             The Unicode code charts generally show characters in the orientation
             they take
@@ -469,25 +487,25 @@
             rotated when displayed in horizontal lines; figure 3 shows an example of Mongolian text in horizontal
             lines in which the Mongolian characters are rotated
             90 degrees counterclockwise with respect to the code charts prior to Unicode 7.0.
-            
+
          </p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="figure_3">Figure 3. Mongolian text on horizontal lines</a></b></p>
-            
-            
+
+
             <p>
-               
+
                <img src="mongolian_horizontal.png" alt="" />
-               
-               
+
+
             </p>
-            
+
          </center>
-         
-         
+
+
          <p>
             The Unicode 7.0 code charts changed the orientation of characters for Mongolian and
             Phags-pa
@@ -501,10 +519,10 @@
             However, implementations should be aware that
             underlying rendering systems may not have
             exactly the same orientation of characters as the code charts.
-            
+
          </p>
-         
-         
+
+
          <p>
             While this property defines only default orientations compared to the code charts,
             high-level protocols or applications could combine
@@ -512,257 +530,257 @@
             with the property values to more reliably calculate in which orientation they should
             render such glyphs,
             in order to achieve the desired visual result.
-            
+
          </p>
-         
-         
-         
-         
-         
+
+
+
+
+
          <h2><a name="tailorings">4 Tailorings</a></h2>
-         
-         
+
+
          <p>To facilitate tailorings, this report identifies sets of
             characters which behave similarly, and for which it can useful to
             tailor the orientation as a group.
          </p>
-         
-         
-         
+
+
+
          <h3><a name="brackets">4.1 The brackets</a></h3>
-         
-         
+
+
          <p>This set contains brackets, which while they appear
             rotated, are commonly implemented as if they were
             transformed.
          </p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="table_2">Table 2. The brackets set</a></b></p>
-            
-            
+
+
             <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-               
+
                <tbody>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">00AB</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">00BB</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">201C..201F</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2039..203A</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2045..2046</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">3008..3011</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">3014..301B</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FE59..FE5E</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF08..FF09</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF3B</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF3D</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF5B</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF5D</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF5F..FF60</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FF62..FF63</td>
-                     
+
                   </tr>
-                  
+
                </tbody>
-               
+
             </table>
-            
+
          </center>
-         
-         
-         
-         
+
+
+
+
          <h3><a name="arrows">4.2 The arrows</a></h3>
-         
-         
+
+
          <p>This set contains arrows.</p>
-         
-         
+
+
          <center>
-            
+
             <p><b><a name="table_3">Table 3. The arrows set</a></b></p>
-            
-            
+
+
             <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-               
+
                <tbody>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2190..21FF</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">261A..261F</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2794</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2798..27AF</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">27B1..27BE</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">27F0..27FF</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2900..297F</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2B00..2B11</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">2B30..2B4F</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">2B5A..2BB7</td>
                   </tr>
-                  
+
                   <tr>
-                     
+
                      <td valign="top" style="border-width: 0px;">FFE9..FFEC</td>
-                     
+
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">1F800..1F80B</td>
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">1F810..1F847</td>
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">1F850..1F859</td>
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">1F860..1F887</td>
                   </tr>
-                  
+
                   <tr>
                      <td valign="top" style="border-width: 0px;">1F890..1F8AD</td>
                   </tr>
-                  
+
                </tbody>
-               
+
             </table>
-            
+
          </center>
-         
-         
-         
-         
+
+
+
+
          <h2><a name="vertcal_alternates">5 Glyphs Changes for Vertical Orientation</a></h2>
-         
-         
+
+
          <p>Table 4 provides representative
             glyphs for the horizontal and vertical appearance of
             characters with the property value Tu and Tr.
          </p>
-         
-         
+
+
          <p>
             The vertical glyphs that are shown in the table are exemplary,
             and their presence does not imply that font implementations should necessarily support
@@ -771,19 +789,19 @@
             regions
             to determine whether a vertical glyph is necessary for a particular character,
             and what the appropriate vertical glyph should be.
-            
+
          </p>
-         
-         
+
+
          <p>
             The Horizontal column may also specify more than one glyph when regional or other
             differences exist.
             Font developers should adhere to regional conventions when determining the appearance
             of horizontal glyphs.
-            
+
          </p>
-         
-         
+
+
          <center>
             <p><b><a name="table_4">Table 4. Glyph Changes for Vertical Orientation</a></b></p>
             <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
@@ -2175,25 +2193,25 @@
                </tbody>
             </table>
          </center>
-         
-         
-         
+
+
+
          <h2><a name="data">6 Data File</a></h2>
-         
-         
-         
-         
+
+
+
+
          <p>The data file is in versioned directories under
             [<a href="#Data50">Data50</a>].
             The character repertoire of this revision is the repertoire of Unicode Version 7.0.
-            
+
          </p>
-         
-         
-         
+
+
+
          <h2><a name="acknowledgments">Acknowledgments</a></h2>
-         
-         
+
+
          <p>
             Thanks to the original editor Eric Muller, and reviewers:
             Julie Allen,
@@ -2226,31 +2244,31 @@
             the W3C I18N Interest group,
             the W3C Internationalization Working Group.
          </p>
-         
+
          <h2><a name="References">References</a></h2>
          <table class="nbwide" cellpadding="8">
             <tbody>
-               
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="Data50">Data50</a>]
                   </td>
                   <td class="nb" valign="top">
                      <a href="http://www.unicode.org/Public/vertical/revision-13/">http://www.unicode.org/Public/vertical/revision-13/</a>
-                     
+
                   </td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_errata">Errata</a>]
                   </td>
                   <td class="nb" valign="top">Updates and Errata<br />
                      <a href="http://www.unicode.org/errata">http://www.unicode.org/errata</a>
-                     
+
                   </td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_feedback">Feedback</a>]
                   </td>
@@ -2260,16 +2278,16 @@
                         For reporting errors and requesting information online.
                         </i></td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_JLREQ">JLREQ</a>]
                   </td>
                   <td class="nb" valign="top"><a href="http://www.w3.org/TR/jlreq/">Requirements for Japanese Text layout</a>, W3C Working Group Note
                   </td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_reports">Reports</a>]
                   </td>
@@ -2278,15 +2296,15 @@
                         	technical reports, and for a list of technical reports.
                         </i></td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_uax29">UAX29</a>]
                   </td>
                   <td class="nb" valign="top">UAX #29: <i>Unicode Text Segmentation</i><br /><a href="http://www.unicode.org/reports/tr29/">http://www.unicode.org/reports/tr29/</a></td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_ucd">UCD</a>]
                   </td>
@@ -2297,19 +2315,19 @@
                         <a href="http://www.unicode.org/reports/tr44/">http://www.unicode.org/reports/tr44/</a>
                         </i></td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_unicode">Unicode</a>]
                   </td>
                   <td class="nb" valign="top"><i>The Unicode Standard, Version 7.0.0</i>,
                      (Mountain View, CA: The Unicode Consortium,
                      2014. ISBN 978-1-936213-09-2<br /><a href="http://www.unicode.org/versions/Unicode7.0.0">http://www.unicode.org/versions/Unicode7.0.0</a>
-                     
+
                   </td>
                </tr>
-               
-               
+
+
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_versions">Versions</a>]
                   </td>
@@ -2318,70 +2336,89 @@
                         	Unicode Standard, and how to cite them.
                         </i></td>
                </tr>
-               
+
             </tbody>
          </table>
          <h2><a name="Modifications">Modifications</a></h2>
          <p>This section indicates the changes introduced by each
             	revision.
          </p>
-         
+
+
+         <div>
+            <p class="changed"><b>Revision 14</b></p>
+
+            <ul>
+               <li class="changed">Proposed update to synchronize with Unicode 8.0.</li>
+            </ul>
+
+         </div>
+
+
+
+
+
+
+
+
+
+
          <div>
             <p><b>Revision 13</b></p>
-            
+
             <ul>
-               
+
                <li>
-                  <p>Changed 3127 from U to Tu, and added its horizontal variant 
+                  <p>Changed 3127 from U to Tu, and added its horizontal variant
 				  to Table 4 .</p>
                </li>
-               
+
                <li>
                   <p>Changed the representative vertical glyphs for 301E and FF1A in Table 4.</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
-            
+
             <ul>
-               	
+
                <li>
                   <p>Updated for the character repertoire of Unicode 7.0.</p>
                </li>
-               	
+
                <li>
                   <p>Changes made to designated code points as of Unicode 6.3:</p>
-                  
+
                   <ul>
-                     
+
                      <li>
                         <p>Characters moved from U to R:
                            2066..2069,
                            FFFFE..FFFFF, 10FFFE..10FFFF.
                         </p>
                      </li>
-                     
+
                   </ul>
-                  	
+
                </li>
-               
+
                <li>
                   <p>Changes made for assigned characters and allocated blocks in Unicode 7.0:</p>
-                  
+
                   <ul>
-                     
+
                      <li>
                         <p>Characters moved from U to R: 2B4D..2B4F, 2B5A..2BB7.</p>
                      </li>
-                     
+
                      <li>
                         <p>Characters moved from R to U: 11580..115FF, 1F650..1F67F, 1F780..1F7FF.</p>
                      </li>
-                     
+
                      <li>
                         <p>Characters added to the arrows tailoring set:
                            2B4D..2B4F, 2B5A..2BB7,
@@ -2389,59 +2426,59 @@
                            (1F800..1F80B, 1F810..1F847, 1F850..1F859, 1F860..1F887, 1F890..1F8AD).
                         </p>
                      </li>
-                     
+
                   </ul>
-                  
+
                </li>
-               
+
             </ul>
-            
+
          </div>
 
 		<div><p>Revision 12 being a proposed update, only changes between revisions 11 and 13 are listed here.</p></div>
-         
+
          <div>
             <p><b>Revision 11</b></p>
-            
+
             <ul>
-               
+
                <li>
                   <p>First approved published version.</p>
                </li>
-               
+
                <li>
                   <p>The property value Tx was removed because it was no longer used.</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from U to R: 1800..18AF (Mongolian), A840..A87F (Phags-Pa).</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from U to Tu: FF1F.</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from Tu to U: 309D..309E.</p>
                </li>
-               
+
                <li>
                   <p>Changes to Table 4:</p>
-                  
+
                   <ul>
-                     
+
                      <li>
                         <p>Added FF1F.</p>
                      </li>
-                     
+
                      <li>
                         <p>Removed 309D..309E.</p>
                      </li>
-                     
+
                      <li>
                         <p>Removed erroneously included FF61..FF70.</p>
                      </li>
-                     
+
                      <li>
                         <p>Added a variant form to
                            3001..3002,
@@ -2453,64 +2490,64 @@
                            and FF1F.
                         </p>
                      </li>
-                     
+
                      <li>
                         <p>Added two variant forms to FF1B.</p>
                      </li>
-                     
+
                   </ul>
-                  
+
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 10</b></p>
-            
+
             <ul>
-               
+
                <li>
                   <p>Table 4 is updated.</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from U to R: 2126, 212A, 212B.</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from R to Tr: 2329, 232A.</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 9</b></p>
-            
+
             <ul>
-               
+
                <li>
                   <p>The property renamed back to <tt>vo</tt>.
                   </p>
                </li>
-               
+
                <li>
                   <p>T renamed to Tx.</p>
                </li>
-               
+
                <li>
                   <p>Clarified priorities of contexts and environments.</p>
                </li>
-               
+
                <li>
                   <p>Overview and Scope edited to clarify what tailoring is better.</p>
                </li>
-               
+
                <li>
                   <p>Characters moved from U/T to R:
                      00B6, 02E5..02E9, 2018..2019, 203D, 2044,
@@ -2521,139 +2558,139 @@
                      23B4..23B6, 23BA..23BD, 23CE, 2423.
                   </p>
                </li>
-               
+
                <li>
                   <p>Characters moved from R to U:
                      00B1, 00D7, 00F7, 221E, 2234..2235, 10980..1099F.
                   </p>
                </li>
-               
+
                <li>
                   <p>Characters that were undefined and are defined as R: E0000..E007F</p>
                </li>
-               
+
                <li>
                   <p>Characters that were undefined and are defined as U: FFFC, F0000..10FFFF</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 8</b></p>
-            
+
             <blockquote>
                <p>Editorial changes.</p>
             </blockquote>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 7</b></p>
-            
+
             <ul>
-               
+
                <li>
                   <p>The scope is clarified to serve as a stable default for reliable document interchange.</p>
                </li>
-               
+
                <li>
                   <p>The svo property is removed because supporting multiple styles and scripts is out
                      of scope for document interchange.
                   </p>
                </li>
-               
+
                <li>
                   <p>The ho property is removed because it is out of scope for document interchange.
                      Refer to ?? for more details.
                   </p>
                </li>
-               
+
                <li>
                   <p>The 'L' value is removed from table 1.</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 6</b></p>
-            
+
             <blockquote>
                <p>Data updated. No change to the text.</p>
             </blockquote>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 5</b></p>
-            
+
             <ul>
-               
-               
+
+
                <li>
                   <p>TR renamed to include “Horizontal”.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>New property for horizontal text. The current assignment is L for Mongolian and Phags-pa,
                      U for all the other characters.
                   </p>
                </li>
-               
-               
+
+
                <li>
                   <p>Proposal B has been accepted; removed proposal A.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>Characters moved from U or R to T: 3008..3011 3014..301B 301D..301F 309B..309E 20A0
                      FF01 FF08..FF09 FF0C..FF0E FFaA..FF1E FF3B FF3F FF5b..FF60 FF62..FF63 FF70 FFE3, on
                      the basis of small shift in the box, similar to small kana.
                   </p>
                </li>
-               
-               
+
+
                <li>
                   <p>T moved to Tr or Tu, following MS proposal. The only T characters remaining are 2018
                      and 2019, which are R/R in MS proposal.
                   </p>
                </li>
-               
-               
+
+
                <li>
                   <p>Arrow set introduced, as in MS proposal.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>Yi blocks changed from svo/mvo R to U.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>UCAS changed from mvo R to U, except for U+1400 ᐀ CANADIAN SYLLABICS HYPHEN.</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 4</b></p>
-            
+
             <ul>
-               
-               
+
+
                <li>
                   <p>Properties renamed to Stacked Vertical
                      Orientation (previously Default Vertical Orientation) and
@@ -2661,59 +2698,59 @@
                      Orientation)
                   </p>
                </li>
-               
-               
+
+
                <li>
                   <p>Introduced sets of characters for
                      tailoring.
                   </p>
                </li>
-               
-               
+
+
                <li>
                   <p>Property value S renamed to R.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>Property value Sb merged with R; set
                      created for brackets.
                   </p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 3</b></p>
-            
+
             <ul>
-               
-               
+
+
                <li>
                   <p>Mongolian and Egyptian Hieroglyphs changed to U.</p>
                </li>
-               
-               
+
+
                <li>
                   <p>Implementation of the UTC decisions made during meeting #130, February 2012.</p>
-                  
-                  
+
+
                   <ul>
-                     
+
                      <li>
                         <p>Removal of the East Asian Class property</p>
                      </li>
-                     
-                     
+
+
                      <li>
                         <p>East Asian Orientation renamed East Asian Vertical Orientation</p>
                      </li>
-                     
-                     
-                     
+
+
+
                      <li>
                         <p>New property, Default Vertical Orientation. The initial assignment is: T if EAVO=T,
                            SB if EAVO=SB and the bracket is specific to CJK, S to align with CSS Sv value except
@@ -2721,76 +2758,76 @@
                            FD3E, FD3F, which remain U.
                         </p>
                      </li>
-                     
+
                   </ul>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 2</b></p>
-            
+
             <ul>
-               
+
                <li>
                   <p>Clarification of the status of the properties (end of section 1)</p>
                </li>
-               
+
                <li>
                   <p>Clarification of the handling of grapheme clusters</p>
                </li>
-               
+
                <li>
                   <p>Removed the "comments" column in table 3.</p>
                </li>
-               
+
                <li>
                   <p>Hangul characters: new class cl-19.4, hangul, orientation U</p>
                </li>
-               
+
                <li>
                   <p>Yijing Hexagram symbols are now cl-19-3, symbols, orientation U.</p>
                </li>
-               
+
                <li>
                   <p>Small forms variants are treated like their fullwidth r-cllkjljrparts.</p>
                </li>
-               
+
                <li>
                   <p>Superscripts and subscript characters are now cl-27, western, orientation S</p>
                </li>
-               
+
                <li>
                   <p>Small kana: orientation U; class split in cl-11.1, smallHiragana and cl-11.2, smallKatakana</p>
                </li>
-               
+
                <li>
                   <p>U+3030 〰 WAVY DASH has orientation T.</p>
                </li>
-               
+
                <li>
                   <p>The two alternatives for math, etc. are described.</p>
                </li>
-               
+
             </ul>
-            
+
          </div>
-         
-         
+
+
          <div>
             <p><b>Revision 1</b></p>
-            
+
             <blockquote>
                <p>First working draft.</p>
             </blockquote>
-            
+
          </div>
-         
+
          <hr />
-         <p class="copyright">Copyright © 2011-2014 Unicode, Inc. All Rights Reserved. The
+         <p class="copyright">Copyright © 2011-201<span class="changed">5 </span>Unicode, Inc. All Rights Reserved. The
             Unicode Consortium makes no expressed or implied warranty of any
             kind, and assumes no liability for errors or omissions. No liability
             is assumed for incidental and consequential damages in connection
