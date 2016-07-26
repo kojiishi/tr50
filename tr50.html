@@ -40,7 +40,8 @@
          </tbody>
       </table>
       <div class="body">
-         <h2 style="text-align:center">Unicode&reg; Technical Report #50
+         <h2 style="text-align:center"><span class="changed">Proposed Update</span>
+         Unicode&reg; Technical Report #50
          </h2>
          <h1 style="text-align:center">Unicode Vertical Text Layout</h1>
          <table class="wide" border="1" cellpadding="2" width="90%">
@@ -51,17 +52,17 @@
                </tr>
                <tr>
                   <td valign="top">Date</td>
-                  <td valign="top"><span>2015-11-12</span></td>
+                  <td valign="top" class="changed"><span>201</span>6-07-21</td>
                </tr>
                <tr>
                   <td valign="top">This Version</td>
-                  <td valign="top"><span>
-                    <a href="http://www.unicode.org/reports/tr50/tr50-15.html">http://www.unicode.org/reports/tr50/tr50-15.html</a></span></td>
+                  <td valign="top" class="changed">
+                    <a href="http://www.unicode.org/reports/tr50/tr50-16.html">http://www.unicode.org/reports/tr50/tr50-16.html</a></td>
                </tr>
                <tr>
                   <td valign="top">Previous Version</td>
-                  <td valign="top"><span>
-                    <a href="http://www.unicode.org/reports/tr50/tr50-13.html">http://www.unicode.org/reports/tr50/tr50-13.html</a></span></td>
+                  <td valign="top" class="changed">
+                    <a href="http://www.unicode.org/reports/tr50/tr50-15.html">http://www.unicode.org/reports/tr50/tr50-15.html</a></td>
                </tr>
                <tr>
                   <td valign="top">Latest Version</td>
@@ -73,14 +74,14 @@
                </tr>
                <tr>
                   <td valign="top">Data</td>
-                  <td valign="top"><span>
-                    <a href="http://www.unicode.org/Public/vertical/revision-15/">
-                      http://www.unicode.org/Public/vertical/revision-15/</a></span></td>
+                  <td valign="top" class="changed">
+                    <a href="http://www.unicode.org/Public/vertical/revision-16/">
+                      http://www.unicode.org/Public/vertical/revision-16/</a></td>
                </tr>
                <tr>
                   <td valign="top">Revision</td>
-                  <td valign="top">
-                    <a href="#Modifications"><span>15</span></a></td>
+                  <td valign="top" class="changed">
+                    <a href="#Modifications"><span>16</span></a></td>
                </tr>
             </tbody>
          </table>
@@ -114,8 +115,8 @@
 
          <h4><i>Status</i></h4>
 
-		<!-- NOT YET APPROVED
-		<p>
+		<!-- NOT YET APPROVED -->
+		<p class="changed">
 			<i>This is a<b><font color="#ff3333"> draft </font></b>document
 				which may be updated, replaced, or superseded by other documents at
 				any time. Publication does not imply endorsement by the Unicode
@@ -123,13 +124,13 @@
 				cite this document as other than a work in progress.
 			</i>
 		</p>
-		END NOT YET APPROVED -->
-		<!-- APPROVED -->
+		<!-- END NOT YET APPROVED -->
+		<!-- APPROVED 
       <p><i>This document has been reviewed by Unicode members and other
 	  interested parties, and has been approved for publication by the Unicode
 	  Consortium. This is a stable document and may be used as reference
 	  material or cited as a normative reference by other specifications.</i></p>
-    <!-- END APPROVED -->
+    	 END APPROVED -->
 
 
 
@@ -2206,7 +2207,7 @@
          <p>The data file is in versioned directories under
             [<a href="#Data50">Data50</a>].
             The character repertoire of this revision is the repertoire of
-            Unicode Version 8.0.
+            Unicode Version <span class="changed">9</span><span class="removed">8</span>.0.
          </p>
 
 
@@ -2242,8 +2243,8 @@
             Philippe Verdy,
             Ken Whistler,
             Taro Yamamoto,
-            the W3C CSS Working group,
-            the W3C I18N Interest group,
+            the W3C CSS Working Group,
+            the W3C I18N Interest Group,
             the W3C Internationalization Working Group.
          </p>
 
@@ -2255,7 +2256,7 @@
                   <td width="1" class="nb" valign="top">[<a name="Data50">Data50</a>]
                   </td>
                   <td class="nb" valign="top">
-                     <a href="http://www.unicode.org/Public/vertical/revision-15/">http://www.unicode.org/Public/vertical/revision-15/</a>
+                     <a href="http://www.unicode.org/Public/vertical/revision-16/">http://www.unicode.org/Public/vertical/revision-<span class="changed">16</span><span class="removed">15</span>/</a>
                   </td>
                </tr>
 
@@ -2321,10 +2322,10 @@
                <tr>
                   <td width="1" class="nb" valign="top">[<a name="biblio_unicode">Unicode</a>]
                   </td>
-                  <td class="nb" valign="top"><i>The Unicode Standard, Version 8.0.0</i>,
-                     (Mountain View, CA: The Unicode Consortium, 2015.
-                     ISBN 978-1-936213-10-8<br />
-                     <a href="http://www.unicode.org/versions/Unicode8.0.0/">http://www.unicode.org/versions/Unicode8.0.0/</a>
+                  <td class="nb" valign="top"><i>The Unicode Standard, Version <span class="changed">9</span><span class="removed">8</span>.0.0</i>,
+                     (Mountain View, CA: The Unicode Consortium, 201<span class="changed">6</span><span class="removed">5</span>.
+                     ISBN 978-1-936213-<span class="changed">13-9</span><span class="removed">10-8</span><br />
+                     <a href="http://www.unicode.org/versions/Unicode9.0.0/">http://www.unicode.org/versions/Unicode<span class="changed">9</span><span class="removed">8</span>.0.0/</a>
                   </td>
                </tr>
 
@@ -2344,6 +2345,27 @@
          <p>This section indicates the changes introduced by each
             	revision.
          </p>
+
+         <div class="changed">
+            <p><b>Revision 16</b></p>
+            <ul>
+               <li><b>Proposed update</b> for the character repertoire of Unicode 9.0.</li>
+               <li><p>Changes made for new assigned characters and allocated blocks in Unicode 9.0:</p>
+                 <ul>
+                   <li><p>Changes made in the <a href="#data">data file</a>:</p>
+                     <ul>
+                       <li><p>Characters given the value of U:
+                         16FE0..16FFF,
+                         17000..187FF,
+                         18800..18AFF.
+                       </p></li>
+                   </ul></li>
+                   <li><p>Other characters new to Unicode 9.0 have values unchanged
+                     from the previous revision of this document.</p></li>
+                 </ul>
+               </li>
+            </ul>
+         </div>
 
          <div>
             <p><b>Revision 15</b></p>
@@ -2837,7 +2859,7 @@
          </div>
 
          <hr />
-         <p class="copyright">Copyright © 2011-2015 Unicode, Inc. All Rights Reserved. The
+         <p class="copyright">© 201<span class="changed">6</span> Unicode, Inc. All Rights Reserved. The
             Unicode Consortium makes no expressed or implied warranty of any
             kind, and assumes no liability for errors or omissions. No liability
             is assumed for incidental and consequential damages in connection
