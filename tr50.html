@@ -4,7 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <link rel="stylesheet" type="text/css"
-            href="http://www.unicode.org/reports/reports-web.css" />
+            href="http://www.unicode.org/reports/reports-v2.css" />
       <title>UTR #50: Unicode Vertical Text Layout</title><style type="text/css">
 .review {
   background-color:#FFC0C0;
@@ -12,20 +12,17 @@
   border-width: 1px;
 }
 .glyphn {
-  border-width:0px;
   vertical-align:middle;
 }
 .glyphh {
-  border-width:0px;
   padding-right:12px;
   vertical-align:top;
 }
 .glyphv {
-  border-width:0px;
   vertical-align:top;
 }
   </style></head>
-   <body style="background-color:#ffffff">
+   <body>
       <table class="header" cellpadding="0" cellspacing="0" width="100%">
          <tbody>
             <tr>
@@ -40,11 +37,11 @@
          </tbody>
       </table>
       <div class="body">
-         <h2 style="text-align:center"><span class="changed">Proposed Update</span>
+         <h2 class="uaxtitle"><span class="changed">Proposed Update</span>
          Unicode&reg; Technical Report #50
          </h2>
-         <h1 style="text-align:center">Unicode Vertical Text Layout</h1>
-         <table class="wide" border="1" cellpadding="2" width="90%">
+         <h1>Unicode Vertical Text Layout</h1>
+         <table class="simple" width="90%">
             <tbody>
                <tr>
                   <td valign="top">Editor</td>
@@ -52,7 +49,7 @@
                </tr>
                <tr>
                   <td valign="top">Date</td>
-                  <td valign="top" class="changed"><span>201</span>6-07-21</td>
+                  <td valign="top" class="changed">2016-07-27</td>
                </tr>
                <tr>
                   <td valign="top">This Version</td>
@@ -85,7 +82,7 @@
                </tr>
             </tbody>
          </table>
-         <h4 style="margin-top: 1em;">Summary</h4>
+         <h4 class="summary">Summary</h4>
 
 
          <p><i>The Unicode code charts generally show characters
@@ -113,7 +110,7 @@
                </i></p>
 
 
-         <h4><i>Status</i></h4>
+         <h4 class="status">Status</h4>
 
 		<!-- NOT YET APPROVED -->
 		<p class="changed">
@@ -125,7 +122,7 @@
 			</i>
 		</p>
 		<!-- END NOT YET APPROVED -->
-		<!-- APPROVED 
+		<!-- APPROVED
       <p><i>This document has been reviewed by Unicode members and other
 	  interested parties, and has been approved for publication by the Unicode
 	  Consortium. This is a stable document and may be used as reference
@@ -148,7 +145,7 @@
                the Unicode Standard see [<a href="#biblio_unicode">Unicode</a>]. For a list of current
                Unicode Technical Reports see [<a href="#biblio_reports">Reports</a>]. For more information about
                versions of the Unicode Standard, see [<a href="#biblio_versions">Versions</a>].</i></p>
-         <h4>Contents</h4>
+         <h4 class="contents">Contents</h4>
          <ul class="toc">
             <li>1     <a href="#overview">Overview and Scope</a></li>
             <li>2     <a href="#conformance">Conformance</a></li>
@@ -190,31 +187,19 @@
 
 
          <center>
-
-            <p><b><a name="figure_1">Figure 1. Japanese vertical text</a></b></p>
-
-
+            <p class="caption"><a name="figure_1">Figure 1. Japanese vertical text</a></p>
             <p><img src="japanese.png" alt="" /></p>
-
          </center>
-
 
          <p>
             In many parts of the world, most characters are upright,
             as can be seen in figure 2.
-
          </p>
 
-
          <center>
-
-            <p><b><a name="figure_2">Figure 2. Western vertical text</a></b></p>
-
-
+            <p class="caption"><a name="figure_2">Figure 2. Western vertical text</a></p>
             <p><img src="paystation.png" alt="" /></p>
-
          </center>
-
 
          <p>
             Most languages and scripts are written horizontally and vertical
@@ -361,42 +346,27 @@
             The possible property values are given in table 1.
          </p>
 
-
          <center>
-
-            <p><b><a name="table_1">Table 1. Property Values</a></b></p>
-
-            <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-
+            <p class="caption"><a name="table_1">Table 1. Property Values</a></p>
+            <table class="simple">
                <tbody>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">U</td>
-
-                     <td valign="top" style="border-width: 0px;">Characters which are displayed upright, with the same orientation
+                     <td>U</td>
+                     <td>Characters which are displayed upright, with the same orientation
                         that appears
                         in the code charts.
                      </td>
-
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">R</td>
-
-                     <td valign="top" style="border-width: 0px;">Characters which are displayed sideways, rotated
+                     <td>R</td>
+                     <td>Characters which are displayed sideways, rotated
                         90 degrees clockwise compared to the code
                         charts.
                      </td>
-
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">Tu</td>
-
-                     <td valign="top" style="border-width: 0px;">
+                     <td>Tu</td>
+                     <td>
                         Characters which are not just upright or sideways, but
                         generally
                         require a different glyph than in the code charts when
@@ -404,31 +374,20 @@
                         In addition, as a fallback,
                         the character can be displayed with the code chart glyph
                         upright.
-
                      </td>
-
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">Tr</td>
-
-                     <td valign="top" style="border-width: 0px;">
+                     <td>Tr</td>
+                     <td>
                         Same as Tu except that,
                         as a fallback,
                         the character can be displayed with the code chart glyph
                         rotated 90 degrees clockwise.
-
                      </td>
-
                   </tr>
-
                </tbody>
-
             </table>
-
          </center>
-
 
          <p>Note that the orientation is described with respect to the
             appearance in the code charts.
@@ -556,224 +515,120 @@
             transformed.
          </p>
 
-
          <center>
-
-            <p><b><a name="table_2">Table 2. The brackets set</a></b></p>
-
-
-            <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-
+            <p class="caption"><a name="table_2">Table 2. The brackets set</a></p>
+            <table class="subtle-nb">
                <tbody>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">00AB</td>
-
+                     <td>00AB</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">00BB</td>
-
+                     <td>00BB</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">201C..201F</td>
-
+                     <td>201C..201F</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2039..203A</td>
-
+                     <td>2039..203A</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2045..2046</td>
-
+                     <td>2045..2046</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">3008..3011</td>
-
+                     <td>3008..3011</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">3014..301B</td>
-
+                     <td>3014..301B</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FE59..FE5E</td>
-
+                     <td>FE59..FE5E</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF08..FF09</td>
-
+                     <td>FF08..FF09</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF3B</td>
-
+                     <td>FF3B</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF3D</td>
-
+                     <td>FF3D</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF5B</td>
-
+                     <td>FF5B</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF5D</td>
-
+                     <td>FF5D</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF5F..FF60</td>
-
+                     <td>FF5F..FF60</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FF62..FF63</td>
-
+                     <td>FF62..FF63</td>
                   </tr>
-
                </tbody>
-
             </table>
-
          </center>
-
-
-
 
          <h3><a name="arrows">4.2 The arrows</a></h3>
 
 
          <p>This set contains arrows.</p>
 
-
          <center>
-
-            <p><b><a name="table_3">Table 3. The arrows set</a></b></p>
-
-
-            <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
-
+            <p class="caption"><a name="table_3">Table 3. The arrows set</a></p>
+            <table class="subtle-nb">
                <tbody>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2190..21FF</td>
-
+                     <td>2190..21FF</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">261A..261F</td>
-
+                     <td>261A..261F</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2794</td>
-
+                     <td>2794</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2798..27AF</td>
-
+                     <td>2798..27AF</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">27B1..27BE</td>
-
+                     <td>27B1..27BE</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">27F0..27FF</td>
-
+                     <td>27F0..27FF</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2900..297F</td>
-
+                     <td>2900..297F</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2B00..2B11</td>
-
+                     <td>2B00..2B11</td>
                   </tr>
-
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">2B30..2B4F</td>
-
+                     <td>2B30..2B4F</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">2B5A..2BB7</td>
+                     <td>2B5A..2BB7</td>
                   </tr>
-
-                  <tr><td valign="top" style="border-width: 0px;">2BEC..2BEF</td></tr>
-
+                  <tr><td>2BEC..2BEF</td></tr>
                   <tr>
-
-                     <td valign="top" style="border-width: 0px;">FFE9..FFEC</td>
-
+                     <td>FFE9..FFEC</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">1F800..1F80B</td>
+                     <td>1F800..1F80B</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">1F810..1F847</td>
+                     <td>1F810..1F847</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">1F850..1F859</td>
+                     <td>1F850..1F859</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">1F860..1F887</td>
+                     <td>1F860..1F887</td>
                   </tr>
-
                   <tr>
-                     <td valign="top" style="border-width: 0px;">1F890..1F8AD</td>
+                     <td>1F890..1F8AD</td>
                   </tr>
-
                </tbody>
-
             </table>
-
          </center>
-
-
-
 
          <h2><a name="vertcal_alternates">5 Glyphs Changes for Vertical Orientation</a></h2>
 
@@ -806,13 +661,13 @@
 
 
          <center>
-            <p><b><a name="table_4">Table 4. Glyph Changes for Vertical Orientation</a></b></p>
-            <table style="border-width: 0px;" cellspacing="2" cellpadding="2">
+            <p class="caption"><a name="table_4">Table 4. Glyph Changes for Vertical Orientation</a></p>
+            <table class="subtle">
                <thead>
                   <tr>
-                     <td class="glyphn">Character</td>
-                     <td class="glyphh">Horizontal</td>
-                     <td class="glyphv">Vertical</td>
+                     <th class="glyphn">Character</th>
+                     <th class="glyphh">Horizontal</th>
+                     <th class="glyphv">Vertical</th>
                   </tr>
                </thead>
                <tbody>
@@ -2249,7 +2104,7 @@
          </p>
 
          <h2><a name="References">References</a></h2>
-         <table class="nbwide" cellpadding="8">
+         <table class="ref">
             <tbody>
 
                <tr>
@@ -2266,7 +2121,6 @@
                   </td>
                   <td class="nb" valign="top">Updates and Errata<br />
                      <a href="http://www.unicode.org/errata/">http://www.unicode.org/errata/</a>
-
                   </td>
                </tr>
 
@@ -2858,7 +2712,7 @@
 
          </div>
 
-         <hr />
+         <hr width="50%"/>
          <p class="copyright">© 201<span class="changed">6</span> Unicode, Inc. All Rights Reserved. The
             Unicode Consortium makes no expressed or implied warranty of any
             kind, and assumes no liability for errors or omissions. No liability
