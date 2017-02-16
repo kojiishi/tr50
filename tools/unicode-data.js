@@ -15,30 +15,36 @@ module.exports = (function () {
     },
     get: function (source, formatter) {
       formatter = formatter || this.formatAsArray;
-      var deferred = Promise.defer();
-      var buffer = "";
-      var parser = new stream.Writable();
-      parser._write = function (chunk, encoding, next) {
-        buffer += chunk;
-        next();
-      };
-      parser.on("finish", function () {
-        var results = null;
-        for (var line of buffer.split("\n"))
-          results = unicodeData.parseLine(line, formatter, results);
-        deferred.resolve(results);
-      });
-      var basename = path.basename(url.parse(source).path);
-      var local = "ucd/" + basename;
-      if (fs.existsSync(local)) {
-        fs.createReadStream(local)
-          .pipe(parser);
-      } else {
-        http.get(source, function (res) {
-          res.pipe(parser);
+      return new Promise(resolve => {
+        var buffer = "";
+        var parser = new stream.Writable();
+        parser._write = function (chunk, encoding, next) {
+          buffer += chunk;
+          next();
+        };
+        parser.on("finish", function () {
+          var results = null;
+          for (var line of buffer.split("\n"))
+            results = unicodeData.parseLine(line, formatter, results);
+          resolve(results);
         });
-      }
-      return deferred.promise;
+        if (source.startsWith("http")) {
+          var urlComponents = url.parse(source);
+          if (urlComponents.protocol) {
+            var basename = path.basename(urlComponents.path);
+            var local = "ucd/" + basename;
+            if (!fs.existsSync(local)) {
+              http.get(source, function (res) {
+                res.pipe(parser);
+              });
+              return;
+            }
+            source = local;
+          }
+        }
+        fs.createReadStream(source)
+          .pipe(parser);
+      });
     },
     copyToLocal: function () {
       for (let key in unicodeData.url) {
